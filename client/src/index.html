@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/head.html', { "title": "Главная" })
+	<body>
+		<div class="wrapper">
+			@@include('html/header.html')
+			<main class="main">
+				<section id="intro" class="intro">
+					<div class="container">
+						<div class="intro__lang-btns">
+							<button class="intro__lang-btn" data-type="lang-btn">en</button>
+							<button class="intro__lang-btn" data-type="lang-btn">ru</button>
+						</div>
+
+						<div class="intro__inner">
+							<div class="intro__content">
+								<h1 class="title-big intro__title">
+									<span data-enLang="Hello, my name is"
+										>Привет, меня зовут</span
+									>
+									<span class="intro__title-span" data-enLang="Max Kemzi"
+										>Максим Kemzi</span
+									>
+								</h1>
+								<p
+									class="subtitle intro__subtitle"
+									data-enLang="I am javascript developer and open to working with you."
+								>
+									Я занимаюсь front-end разработкой на протяжении 3 лет и открыт
+									к сотрудничеству с вами.
+								</p>
+								<div class="intro__btns">
+									<a
+										class="btn btn--transparent intro__btn animate__animated animate__fadeInLeft animate__delay-2s"
+										href="https://github.com/Kemzi-coder"
+										target="_blank"
+									>
+										GitHub
+									</a>
+									<a
+										class="btn intro__btn animate__animated animate__fadeInRight animate__delay-3s"
+										data-enLang="Find out more"
+										href="#projects"
+									>
+										Узнать больше
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="btn-down">
+							<p class="btn-down__text" data-enLang="Scroll down">
+								Листай ниже
+							</p>
+							<a class="btn-down__icon" href="#projects"></a>
+						</div>
+					</div>
+				</section>
+
+				<section id="projects" class="projects section">
+					<div class="container">
+						<div class="projects__body body">
+							<div class="projects__content content">
+								<h3
+									class="title projects__title wow animate__animated animate__fadeInTopRight"
+									data-enLang="My projects"
+								>
+									Мои работы
+								</h3>
+
+								<div class="projects-filter">
+									<div class="projects-filter__btns">
+										<div class="projects-filter__btn-highlighter"></div>
+										<button
+											class="projects-filter__btn active"
+											data-filter="app"
+										>
+											React apps
+										</button>
+										<button
+											class="projects-filter__btn"
+											data-filter="website"
+											data-enLang="Websites"
+										>
+											Websites
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section id="benefits" class="benefits section">
+					<div class="container">
+						<div class="benefits__body body">
+							<div class="benefits__content content">
+								<h3
+									class="title wow animate__animated animate__fadeInTopLeft benefits__title"
+									data-enLang="Why choose me?"
+								>
+									Почему я?
+								</h3>
+								<div class="benefits__wrapper">
+									<div class="benefits__items">
+										<div
+											class="benefit wow animate__animated animate__fadeInLeft"
+											data-wow-offset="250"
+										>
+											<div class="benefit__body">
+												<img
+													class="benefit__icon"
+													src="images/benefits-speed.svg"
+													alt="benefit icon"
+												/>
+												<h4 class="benefit__title" data-enLang="Passion">
+													Страсть
+												</h4>
+												<p
+													class="benefit__text"
+													data-enLang="I enjoy doing my job."
+												>
+													Мне нравится выполнять свою работу.
+												</p>
+											</div>
+										</div>
+
+										<div
+											class="benefit wow animate__animated animate__fadeInUp"
+											data-wow-offset="250"
+										>
+											<div class="benefit__body">
+												<img
+													class="benefit__icon"
+													src="images/benefits-tech.svg"
+													alt="benefit icon"
+												/>
+												<h4 class="benefit__title" data-enLang="Quick learner">
+													Быстро учусь
+												</h4>
+												<p
+													class="benefit__text"
+													data-enLang="I am a self-taught programmer."
+												>
+													Я программист-самоучка.
+												</p>
+											</div>
+										</div>
+
+										<div
+											class="benefit wow animate__animated animate__fadeInRight"
+											data-wow-offset="250"
+										>
+											<div class="benefit__body">
+												<img
+													class="benefit__icon"
+													src="images/benefits-optimization.svg"
+													alt="benefit icon"
+												/>
+												<h4 class="benefit__title" data-enLang="Googling :)">
+													Умение гуглить :)
+												</h4>
+												<p
+													class="benefit__text"
+													data-enLang="I know how to google fast and accurate."
+												>
+													Я умею гуглить быстро и точно.
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section id="contacts" class="contacts section">
+					<div class="circle contacts__circle"></div>
+					<div class="container">
+						<div class="contacts__body body">
+							<div class="contacts__content content">
+								<h2 class="title-big contacts__title" data-enLang="Contact me">
+									Свяжитесь со мной
+								</h2>
+								<p
+									class="subtitle contacts__subtitle"
+									data-enLang="Fill out the short form and send it to me, I'll get back to you shortly!"
+								>
+									Заполни короткую форму и отправь ее мне, я свяжусь с тобой в
+									ближайшее время!
+								</p>
+
+								<form class="contacts__form">
+									<input
+										class="contacts__input"
+										name="name"
+										type="text"
+										placeholder="Твое имя и фамилия"
+										data-enLang="Your full name"
+									/>
+									<input
+										class="contacts__input"
+										name="email"
+										type="email"
+										placeholder="Твоя почта"
+										data-enLang="Your email"
+									/>
+									<textarea
+										class="contacts__textarea"
+										name="text"
+										placeholder="Предложение либо вопрос"
+										data-enLang="Suggestion or question"
+									></textarea>
+
+									<div class="contacts__btns">
+										<button
+											class="btn contacts__btn"
+											type="submit"
+											data-enLang="Send"
+										>
+											Отправить заявку
+										</button>
+										<a
+											class="btn btn--transparent contacts__btn"
+											data-enLang="To the top"
+											href="#intro"
+										>
+											Вернуться в начало
+										</a>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+		</div>
+
+		<script src="js/app.min.js"></script>
+	</body>
+</html>

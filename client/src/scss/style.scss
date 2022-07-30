@@ -1,0 +1,477 @@
+@import "utils/vars";
+@import "utils/fonts";
+@import "utils/reset";
+@import "utils/libs";
+@import "utils/global";
+
+// 1. Header
+// 2. Intro
+// 3. Projects
+// 4. Benefits
+// 5. Contacts
+
+// 1. Header
+.header {
+	position: absolute;
+	top: 35px;
+	left: 0;
+	right: 0;
+	z-index: 999;
+
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__burger {
+		display: none;
+	}
+
+	&__panel {
+		display: flex;
+	}
+
+	&__menu {
+		margin-right: 210px;
+	}
+}
+
+.menu {
+	&__list {
+		display: flex;
+	}
+
+	&__item + &__item {
+		margin-left: 30px;
+	}
+
+	&__link {
+		font-size: 16px;
+		line-height: 24px;
+		@extend %gilroy-semibold;
+		color: #fff;
+		transition: color $transitionTime ease;
+
+		&:hover {
+			color: $mainColor;
+		}
+	}
+}
+
+.social {
+	&__inner {
+		display: flex;
+	}
+
+	&__link + &__link {
+		margin-left: 40px;
+	}
+
+	&__link {
+		@extend %gilroy-semibold;
+		color: $textColor;
+	}
+}
+
+// 2. Intro
+
+.intro {
+	height: 100vh;
+	background: linear-gradient(180deg, #222127 0%, #151419 100%);
+
+	.container {
+		height: 100%;
+		position: relative;
+	}
+
+	&__lang-btns {
+		position: absolute;
+		bottom: 50px;
+	}
+
+	&__lang-btn {
+		background: transparent;
+		color: #fff;
+		text-transform: uppercase;
+
+		&.active {
+			color: $mainColor;
+			pointer-events: none;
+		}
+	}
+
+	&__lang-btn + &__lang-btn {
+		margin-left: 10px;
+	}
+
+	&__title-span {
+		white-space: nowrap;
+		animation: animated-text 2s linear 0.5s 1 normal both;
+		overflow: hidden;
+		margin: 0 auto;
+		max-width: max-content;
+		display: block;
+		position: relative;
+
+		&::after {
+			content: "";
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 3px;
+			height: 100%;
+			background: #fff;
+			animation: animated-cursor 600ms linear infinite;
+		}
+
+		&.off::after {
+			animation: animated-cursor 600ms linear forwards;
+		}
+	}
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+	}
+
+	&__content {
+		max-width: 720px;
+		text-align: center;
+	}
+
+	&__subtitle {
+		max-width: 515px;
+		margin: 0 auto 70px auto;
+	}
+
+	&__btn + &__btn {
+		margin-left: 35px;
+	}
+
+	&__btn {
+		padding-right: 45px;
+		padding-left: 45px;
+	}
+}
+
+@keyframes animated-text {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+@keyframes animated-cursor {
+	from {
+		background: #fff;
+	}
+	to {
+		background: transparent;
+	}
+}
+
+@keyframes btnDown {
+	0% {
+		opacity: 0;
+	}
+	30% {
+		opacity: 1;
+	}
+
+	60% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+		top: 60%;
+	}
+}
+
+.btn-down {
+	position: absolute;
+	bottom: 50px;
+	left: 50%;
+	transform: translateX(-50%);
+
+	&__text {
+		font-size: 18px;
+		line-height: 25px;
+		margin-bottom: 15px;
+	}
+
+	&__icon {
+		position: relative;
+		display: block;
+		height: 58px;
+		border-radius: 25px;
+		width: 35px;
+		border: 4px solid $textColor;
+		margin: 0 auto;
+		cursor: pointer;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 10px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 4px;
+			height: 12px;
+			background: $textColor;
+			border-radius: 25px;
+			animation: 2s btnDown ease-in-out infinite;
+		}
+	}
+}
+
+// 3. Projects
+
+.projects-filter {
+	&__btns {
+		border-radius: 30px;
+		max-width: 450px;
+		margin: 0 auto 55px auto;
+		display: flex;
+		position: relative;
+		border: 2px solid #ffffff;
+	}
+
+	&__btn-highlighter {
+		position: absolute;
+		left: 0;
+		top: 0;
+		margin-top: -3px;
+		margin-left: -3px;
+		width: 51.3%;
+		height: 113%;
+		background: $mainColor;
+		border-radius: 25px;
+		transition: all $transitionTime ease-out;
+		box-shadow: 0px 16px 25px rgba(1, 119, 253, 0.15);
+	}
+
+	&__btn {
+		background: transparent;
+		width: 50%;
+		padding: 15px 0;
+		line-height: 25px;
+		color: #fff;
+		text-transform: uppercase;
+		@extend %gilroy-bold;
+		z-index: 5;
+	}
+
+	&__items {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -10px;
+		row-gap: 20px;
+	}
+}
+
+.projects-slider {
+	margin-right: -15px;
+}
+
+.filter-item {
+	width: 33.333%;
+	height: 300px;
+	padding: 0 10px;
+
+	&__body {
+		position: relative;
+		display: block;
+		background: $mainColor;
+		width: 100%;
+		height: 100%;
+		border-radius: 10px;
+	}
+
+	&__body:hover &__block {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	&__block {
+		background: rgba(0, 0, 0, .7);
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 30px 20px;
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity $transitionTime ease, visibility $transitionTime ease;
+	}
+
+	&__title {
+		font-size: 24px;
+		color: #ffffff;
+		@extend %gilroy-bold;
+		margin-bottom: 10px;
+	}
+
+	&__text {
+		line-height: 22px;
+		color: rgba(255, 255, 255, 0.8);
+	}
+}
+
+// 4. Benefits
+
+.benefits {
+	overflow: visible;
+	&__title {
+		text-align: center;
+		margin-right: auto;
+		margin-left: auto;
+		margin-bottom: 70px;
+		max-width: 855px;
+	}
+
+	&__subtitle {
+		text-align: center;
+		max-width: 525px;
+		margin: 0 auto 70px auto;
+	}
+
+	&__items {
+		display: flex;
+		margin: 0 -10px;
+	}
+}
+
+.benefits-slider {
+	margin-right: -15px;
+}
+
+.benefit {
+	z-index: 5;
+	width: 33.333%;
+	padding: 0 10px;
+
+	&__body {
+		text-align: center;
+		background: #1c1b21;
+		width: 100%;
+		height: 100%;
+		padding-top: 70px;
+		padding-bottom: 90px;
+		transition: background $transitionTime ease;
+	}
+
+	&__body:hover {
+		background: $mainColor;
+	}
+
+	&__body:hover &__text {
+		color: #fff;
+	}
+
+	&__icon {
+		margin-bottom: 50px;
+	}
+
+	&__title {
+		font-size: 36px;
+		line-height: 30px;
+		color: #ffffff;
+		@extend %gilroy-bold;
+		margin-bottom: 20px;
+	}
+
+	&__text {
+		transition: color $transitionTime ease;
+		padding: 0 10px;
+	}
+}
+
+// 5. Contacts
+
+.contacts {
+	&__circle {
+		width: 616px;
+		height: 616px;
+		top: 25%;
+		right: -340px;
+	}
+
+	&__title {
+		max-width: 951px;
+		margin-bottom: 20px;
+	}
+
+	&__subtitle {
+		max-width: 525px;
+		margin-bottom: 90px;
+	}
+
+	&__form {
+		max-width: 540px;
+		margin-left: 10px;
+	}
+
+	&__input {
+		padding-bottom: 15px;
+	}
+
+	&__input,
+	&__textarea {
+		display: block;
+		width: 100%;
+		background: transparent;
+		border-bottom: 1px solid #a7a6ab;
+		margin-bottom: 20px;
+		color: #fff;
+		font-size: 17px;
+		line-height: 25px;
+		transition: border-color 0.4s ease;
+
+		&::placeholder {
+			color: $textColor;
+			opacity: 1;
+		}
+
+		&:focus {
+			border-color: #fff;
+		}
+
+		&:focus::placeholder {
+			color: transparent;
+		}
+	}
+
+	&__textarea {
+		resize: none;
+		margin-bottom: 60px;
+		height: 90px;
+	}
+
+	&__btns {
+		display: flex;
+	}
+
+	&__btn.btn.btn--transparent {
+		padding-right: 41px;
+		padding-left: 41px;
+	}
+
+	&__btn.btn {
+		padding-right: 31px;
+		padding-left: 31px;
+	}
+
+	&__btn + &__btn {
+		margin-left: 35px;
+	}
+}
+
+@import "media";

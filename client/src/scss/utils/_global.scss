@@ -1,0 +1,135 @@
+body {
+	font-size: 18px;
+	line-height: 30px;
+	color: $textColor;
+	letter-spacing: 0.2px;
+	@extend %gilroy-medium;
+}
+
+body.lock {
+	overflow: hidden;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	overflow: hidden;
+}
+
+.container {
+	max-width: 1330px;
+	margin: 0 auto;
+	padding: 0 15px;
+	height: 100%;
+}
+
+.btn {
+	display: inline-block;
+	color: #fff;
+	font-size: 17px;
+	line-height: 25px;
+	box-shadow: 0px 16px 25px rgba(1, 119, 253, 0.15);
+	border-radius: 5px;
+	background: $mainColor;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	@extend %gilroy-semibold;
+	transition: background 0.4s ease, box-shadow 0.4s ease;
+
+	&:hover {
+		background: darken($mainColor, 15%);
+		box-shadow: none;
+	}
+}
+
+.btn.btn--transparent {
+	background: transparent;
+	border: 1px solid #ffffff;
+	box-shadow: none;
+	transition: background 0.4s ease, color 0.4s ease;
+
+	&:hover {
+		background: #fff;
+		color: #000;
+	}
+}
+
+.title {
+	color: #fff;
+	font-size: 48px;
+	line-height: 48px;
+	@extend %gilroy-bold;
+	position: relative;
+	padding-bottom: 30px;
+	margin-bottom: 60px;
+	text-align: center;
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		width: 140px;
+		height: 2px;
+		background: $mainColor;
+	}
+}
+
+.title-big {
+	font-size: 80px;
+	line-height: 88px;
+	color: #ffffff;
+	@extend %gilroy-bold;
+	margin-bottom: 35px;
+}
+
+.subtitle {
+	font-size: 20px;
+	line-height: 30px;
+}
+
+.section {
+	height: 100vh;
+	padding-top: 100px;
+	padding-bottom: 40px;
+	position: relative;
+	background: #141318 url("../images/section-bg.svg");
+	background-size: cover;
+	background-position: center;
+}
+
+.highlighter {
+	color: $mainColor;
+}
+
+.body {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: stretch;
+	height: 100%;
+	z-index: 5;
+}
+
+.content {
+	width: 100%;
+}
+
+// Circles
+
+.circle {
+	position: absolute;
+	background: $mainColor;
+	box-shadow: 0px 16px 64px rgba(1, 119, 253, 0.15);
+	filter: blur(3px);
+	border-radius: 50%;
+	z-index: 2;
+}
+
+:root {
+	--animate-duration: 1.5s;
+}

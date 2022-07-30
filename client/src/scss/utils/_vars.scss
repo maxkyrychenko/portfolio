@@ -1,0 +1,48 @@
+// Font
+$mainFont: "Montserrat", Helvetica, Arial, sans-serif;
+
+// Size
+$mainFontColor: #101010;
+$mainFontSize: 18px;
+$mainFontWeight: 400;
+$mainLineHeight: 1.4;
+
+$desktopWidth: 1280px;
+$smDesktopWidth: 1024px;
+$tableWidth: 768px;
+$smTableWidth: 640px;
+$phoneWidth: 480px;
+$smPhoneWidth: 320px;
+
+$mainColor: #0177fd;
+$secondaryColor: #1c1b21;
+$textColor: #a7a6ab;
+
+$transitionTime: 0.4s;
+
+// Fonts
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url("../fonts/#{$file_name}.ttf");
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+
+// @include fonts(fontname, file_name, weight, style)
+%gilroy-bold {
+	font-family: "Gilroy";
+	font-weight: 700;
+}
+
+%gilroy-semibold {
+	font-family: "Gilroy";
+	font-weight: 600;
+}
+
+%gilroy-medium {
+	font-family: "Gilroy";
+	font-weight: 500;
+}
