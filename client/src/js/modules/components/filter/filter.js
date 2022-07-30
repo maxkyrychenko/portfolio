@@ -1,6 +1,7 @@
 import {Project} from "./Project.js";
 import {animateOnFilter} from "./filter.animation.js";
 import {createFilterSlider, initFilterSlider} from "./filter.slider.js";
+import data from "../../data/index.json";
 
 export const initFilter = () => {
 	const buttons = document.querySelectorAll(".projects-filter__btn");
@@ -10,74 +11,7 @@ export const initFilter = () => {
 	const filterParent = document.querySelector(".projects-filter");
 	const project = new Project();
 
-	let filterItems = [
-		project.create({
-			title: "Cooper",
-			desc: "Приложение для поиска команды.",
-			filter: "app",
-			url: "http://164.92.253.49:5000/",
-			bg: "url('../images/cooper.png')",
-			english: {
-				title: "Cooper",
-				desc: "A team search full-stack app. Stack used: MERN. Front-end: React, Typescript, Styled-components, Formik. Back-end: Node JS, MongoDB, Express."
-			}
-		}),
-		project.create({
-			title: "Helping hand (in development)",
-			desc: "Приложение для поиска команды.",
-			url: "https://github.com/Kemzi-coder/helping-hand",
-			bg: "url('../images/helping-hand.png')",
-			filter: "app",
-			english: {
-				title: "Helping hand (in development)",
-				desc: "Q&A app for students. Stack used: React, Typescript, Redux Toolkit, CSS modules, Formik."
-			}
-		}),
-		project.create({
-			title: "Drive moto",
-			url: "https://kemzi-coder.github.io/shop/",
-			desc: "Интернет-магазин. Используемый стек: Javascript, HTML, SCSS, Swiper.",
-			bg: "url('../images/shop.png')",
-			filter: "website",
-			english: {
-				title: "Drive moto",
-				desc: "Online store. Stack used: Javascript, HTML, SCSS, Swiper."
-			}
-		}),
-		project.create({
-			title: "SBIRI",
-			url: "https://kemzi-coder.github.io/SBIRI/",
-			desc: "Сайт венчурного вонда. Используемый стек: Javascript, HTML, SCSS, Swiper, Animate.css, Wow.js.",
-			bg: "url('../images/sbiri.png')",
-			filter: "website",
-			english: {
-				title: "SBIRI",
-				desc: "Venture Wound's website. Stack used: Javascript, HTML, SCSS, Swiper, Animate.css, Wow.js."
-			}
-		}),
-		project.create({
-			title: "GO-SURF",
-			url: "https://kemzi-coder.github.io/go-surf/",
-			desc: "Лендинг магазина досок для серфинга. Используемый стек: Javascript, HTML, SCSS, Swiper, Animate.css, Wow.js.",
-			bg: "url('../images/gosurf.png')",
-			filter: "website",
-			english: {
-				title: "GO-SURF",
-				desc: "Surfboard store landing. Stack used: Javascript, HTML, SCSS, Swiper, Animate.css, Wow.js."
-			}
-		}),
-		project.create({
-			title: "Studio",
-			url: "https://kemzi-coder.github.io/studio/",
-			desc: "Лендинг студии. Используемый стек: Javascript, HTML, SCSS, Swiper, Animate.css, Wow.js.",
-			bg: "url('../images/gosurf.png')",
-			filter: "website",
-			english: {
-				title: "GO-SURF",
-				desc: "Surfboard store landing. Stack used: Javascript, HTML, SCSS, Swiper, Animate.css, Wow.js."
-			}
-		})
-	];
+	let filterItems = data.projects.map(item => project.create(item));
 
 	const createItems = className => {
 		const $items = document.createElement("div");
