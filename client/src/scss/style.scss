@@ -435,6 +435,10 @@
 		line-height: 25px;
 		transition: border-color 0.4s ease;
 
+		&.invalid {
+			border-color: #F44336;
+		}
+
 		&::placeholder {
 			color: $textColor;
 			opacity: 1;
@@ -453,6 +457,23 @@
 		resize: none;
 		margin-bottom: 60px;
 		height: 90px;
+	}
+
+	&__label {
+		display: block;
+		font-size: 16px;
+		color: #F44336;
+		margin-bottom: 4px;
+	}
+
+	&__status {
+		font-size: 17px;
+		margin-bottom: 12px;
+		color: #F44336;
+
+		&.valid {
+			color: #00E676;
+		}
 	}
 
 	&__btns {

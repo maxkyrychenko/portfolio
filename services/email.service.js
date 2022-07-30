@@ -13,7 +13,7 @@ class EmailService {
 		});
 	}
 
-	async send({name, email, text}) {
+	async send({name, email, message}) {
 		await this.transporter.sendMail({
 			from: process.env.SMTP_FROM,
 			to: process.env.SMTP_TO,
@@ -23,7 +23,7 @@ class EmailService {
 				<div>
 					<h1>${name}</h1>
 					<h2>${email}</h2>
-					<p>${text}</p>
+					<p>${message}</p>
 				</div>
 			`
 		});

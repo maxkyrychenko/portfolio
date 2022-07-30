@@ -1,4 +1,4 @@
-import Swiper from "swiper";
+import Swiper, {Manipulation} from "swiper";
 
 export const createFilterSlider = () => {
 	const $slider = document.createElement("div");
@@ -15,6 +15,7 @@ export const initFilterSlider = () => {
 	return new Swiper(".projects-slider", {
 		wrapperClass: "projects-slider__wrapper",
 		slideClass: "filter-item",
+		modules: [Manipulation],
 		breakpoints: {
 			600: {
 				slidesPerView: 2.2,
@@ -37,4 +38,4 @@ export const initFilterSlider = () => {
 			}
 		}
 	});
-}
+};

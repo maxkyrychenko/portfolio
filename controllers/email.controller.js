@@ -3,9 +3,9 @@ const EmailService = require("../services/email.service");
 class EmailController {
 	static async send(req, res) {
 		try {
-			const {name, email, text} = req.body;
+			const {name, email, message} = req.body;
 
-			await EmailService.send({name, email, text});
+			await EmailService.send({name, email, message});
 
 			res.json({message: "Email sent."});
 		} catch (e) {

@@ -6,7 +6,7 @@ window.onload = () => {
 	}
 
 	langBtns.forEach(btn => {
-		btn.addEventListener("click", e => {
+		btn.addEventListener("click", () => {
 			location.hash = "#" + btn.textContent.toLowerCase();
 			location.reload();
 		});
@@ -29,7 +29,9 @@ window.onload = () => {
 	};
 
 	const changeLanguage = () => {
-		const projectsList = document.querySelector(".projects-filter__items");
+		const projectsList =
+			document.querySelector(".projects-filter__items") ||
+			document.querySelector(".projects-slider__wrapper");
 		let hash = window.location.hash;
 		hash = hash.substring(1);
 

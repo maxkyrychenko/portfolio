@@ -41,6 +41,11 @@ body.lock {
 		background: darken($mainColor, 15%);
 		box-shadow: none;
 	}
+
+	&:disabled {
+		background: darken($mainColor, 15%);
+		box-shadow: none;
+	}
 }
 
 .btn.btn--transparent {
@@ -92,7 +97,7 @@ body.lock {
 }
 
 .section {
-	height: 100vh;
+	min-height: 100vh;
 	padding-top: 100px;
 	padding-bottom: 40px;
 	position: relative;
