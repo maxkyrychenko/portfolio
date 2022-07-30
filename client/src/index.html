@@ -191,27 +191,41 @@
 									ближайшее время!
 								</p>
 
-								<form class="contacts__form">
-									<input
-										class="contacts__input"
-										name="name"
-										type="text"
-										placeholder="Твое имя и фамилия"
-										data-enLang="Your full name"
-									/>
-									<input
-										class="contacts__input"
-										name="email"
-										type="email"
-										placeholder="Твоя почта"
-										data-enLang="Your email"
-									/>
-									<textarea
-										class="contacts__textarea"
-										name="text"
-										placeholder="Предложение либо вопрос"
-										data-enLang="Suggestion or question"
-									></textarea>
+								<form id="form" class="contacts__form">
+									<p id="status" class="contacts__status"></p>
+									<div>
+										<label class="contacts__label" for="name"></label>
+										<input
+											id="name"
+											class="contacts__input"
+											name="name"
+											type="text"
+											placeholder="Ваше имя и фамилия"
+											data-enLang="Your full name"
+										/>
+									</div>
+									<div>
+										<label class="contacts__label" for="email"></label>
+										<input
+											id="email"
+											class="contacts__input"
+											name="email"
+											type="email"
+											placeholder="Ваша почта"
+											data-enLang="Your email"
+										/>
+									</div>
+
+									<div>
+										<label class="contacts__label" for="message"></label>
+										<textarea
+											id="message"
+											class="contacts__textarea"
+											name="message"
+											placeholder="Ваше сообщение"
+											data-enLang="Your message"
+										></textarea>
+									</div>
 
 									<div class="contacts__btns">
 										<button
@@ -219,7 +233,7 @@
 											type="submit"
 											data-enLang="Send"
 										>
-											Отправить заявку
+											Отправить
 										</button>
 										<a
 											class="btn btn--transparent contacts__btn"

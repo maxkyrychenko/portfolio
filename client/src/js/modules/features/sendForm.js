@@ -1,19 +1,40 @@
-window.onload = () => {
-	const form = document.querySelector(".contacts__form");
+import checkInputs from "./validation.js";
 
-	const sendData = async body => {
-		try {
-			await fetch("http://localhost:5000/api/email", {
-				method: "POST",
-				body
-			});
-		} catch (e) {
-			console.log(e);
-		}
-	};
+const form = document.getElementById("form");
+const status = form.querySelector("#status");
+const submitBtn = form.querySelector("button[type='submit']");
 
-	form.addEventListener("submit", async e => {
-		e.preventDefault();
-		sendData(new FormData(e.target));
+const clearAfterDelay = (element, delay = 5000) =>
+	setTimeout(() => {
+		element.innerHTML = "";
+	}, delay);
+
+const sendData = async body => {
+	submitBtn.disabled = true;
+	const response = await fetch("http://localhost:5000/api/email", {
+		method: "POST",
+		body
 	});
+	submitBtn.disabled = false;
+
+	if (response.ok) {
+		status.classList.add("valid");
+
+		status.textContent = "Form successfully submitted.";
+	} else {
+		status.classList.remove("valid");
+
+		status.textContent = "Something went wrong.";
+	}
+
+	clearAfterDelay(status);
 };
+
+form.addEventListener("submit", async e => {
+	e.preventDefault();
+	const isValid = checkInputs();
+
+	if (isValid) {
+		sendData(new FormData(e.target));
+	}
+});
