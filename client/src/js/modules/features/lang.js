@@ -1,13 +1,13 @@
 window.onload = () => {
-	const langBtns = document.querySelectorAll('[data-type="lang-btn"]');
+	const langButtons = document.querySelectorAll("[data-type='lang-btn']");
 
 	if (!location.href.includes("#")) {
 		location.href = window.location.pathname + "#en";
 	}
 
-	langBtns.forEach(btn => {
-		btn.addEventListener("click", () => {
-			location.hash = "#" + btn.textContent.toLowerCase();
+	langButtons.forEach(button => {
+		button.addEventListener("click", () => {
+			location.hash = "#" + button.textContent.toLowerCase();
 			location.reload();
 		});
 	});
@@ -32,10 +32,9 @@ window.onload = () => {
 		const projectsList =
 			document.querySelector(".projects-filter__items") ||
 			document.querySelector(".projects-slider__wrapper");
-		let hash = window.location.hash;
-		hash = hash.substring(1);
+		const hash = window.location.hash.substring(1);
 
-		langBtns.forEach(btn => {
+		langButtons.forEach(btn => {
 			if (btn.textContent.toLowerCase() === hash) {
 				btn.classList.add("active");
 				btn.disabled = true;

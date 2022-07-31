@@ -342,6 +342,18 @@
 		&__items {
 			display: none;
 		}
+
+		&-slider {
+			display: block;
+		}
+	}
+
+	.projects-filter__items {
+		display: none;
+	}
+
+	.projects-slider {
+		display: block;
 	}
 
 	.benefit {
